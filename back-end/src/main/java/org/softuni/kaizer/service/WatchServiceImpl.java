@@ -63,4 +63,18 @@ public class WatchServiceImpl implements WatchService {
 
         return this.modelMapper.map(watchEntity, WatchServiceModel.class);
     }
+
+    @Override
+    public void viewWatch(String id) {
+        Watch watch = this.watchRepository
+                .findById(id)
+                .orElse(null);
+
+        if (watch == null) {
+            return;
+        }
+        watch.setViews(watch.getViews() + 1);
+
+        this.watchRepository.save(watch);
+    }
 }

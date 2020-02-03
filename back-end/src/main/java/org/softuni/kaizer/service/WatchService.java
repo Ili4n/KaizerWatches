@@ -13,4 +13,6 @@ public interface WatchService {
     Set<WatchServiceModel> allWatches();
 
     WatchServiceModel getWatchById(String id);
+
+    void viewWatch(String id);
 }

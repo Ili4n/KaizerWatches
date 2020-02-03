@@ -46,10 +46,10 @@ app.router.on("#/watches/all", null, function () {
                 $('.all-watches')
                     .append('<tr class="row">'
                     + '<td class="col-md-1" scope="col"><h5>' + i + '</h5></td>'
-                    + '<td class="col-md-3" scope="col"><h5>' + elem['name'] + '</h5></td>'
-                    + '<td class="col-md-3" scope="col"><h5>$' + elem['price'] +  '</h5></td>'
-                    + '<td class="col-md-4" scope="col">'
-                    + '<a class="nav-link nav-link-black" href="#/watches/details?id=' + elem['id'] + '">'
+                    + '<td class="col-md-5" scope="col"><h5>' + elem['name'] + '</h5></td>'
+                    + '<td class="col-md-4" scope="col"><h5>$' + elem['price'] +  '</h5></td>'
+                    + '<td class="col-md-2" scope="col">'
+                    + '<a class="nav-link nav-link-black p-0" href="#/watches/details?id=' + elem['id'] + '">'
                     + '<h5>Details</h5>'
                     + '</a>'
                     + '</td>'
@@ -104,7 +104,7 @@ app.router.on('#/watches/details', ['id'], function (id) {
                     + '<div class="col-md-5 d-flex flex-column">'
                     + '<h1 class="text-center">' + data['name'] + '</h1>'
                     + '<h2 class="text-center">Price: $' + data['price'] + '</h2>'
-                    + '<h2 class="text-center mt-3">Viewed: ' + data['visits'] + ' times</h2>'
+                    + '<h2 class="text-center mt-3">Viewed: ' + data['views'] + ' times</h2>'
                     + '<h2 class="text-center mt-3">Description</h2>'
                     + '<p class="mt-3 text-center">'
                     + data['description']

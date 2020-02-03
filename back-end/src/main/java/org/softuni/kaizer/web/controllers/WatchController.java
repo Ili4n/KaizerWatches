@@ -50,6 +50,7 @@ public class WatchController {
 
     @GetMapping(value = "/details", produces = "application/json")
     public WatchDetailsViewModel watchDetails(@RequestParam(name = "id") String id) {
+        this.watchService.viewWatch(id);
         return this.modelMapper
                 .map(this.watchService.getWatchById(id), WatchDetailsViewModel.class);
     }
